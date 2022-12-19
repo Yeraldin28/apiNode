@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+<body>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">nombre</th>
+                <th scope="col">descripcion</th>
+                <th scope="col">valor</th>
+                <th scope="col">habitacion</th>
+                <th scope="col">baño</th>
+                <th scope="col">area</th>
+                <th scope="col">estado</th>
+                <th scope="col">barrio</th>
+                <th scope="col">acciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% rows.forEach((user)=>{ %>
+
+            <tr>
+                <th scope="row"><%= user.id%></th>
+                <td><%= user.nombre%></td>
+                <td><%= user.descripcion%></td>
+                <td>@<%= user.valor%></td>
+                <td>@<%= user.habitacion%></td>
+                <td>@<%= user.bano%></td>
+                <td>@<%= user.area%></td>
+                <td>@<%= user.estado%></td>
+                <td>@<%= user.barrio%></td>
+                <td>
+                    <a class="btn btn-primary" href="propertyupdate/<%= user.id %>">editar</a>
+                    <a class="btn btn-warning" href="propertyupdate/<%= user.id%>">borrar</a>
+                </td>
+            </tr>
+        </tbody>
+    <% }) %>
+    </table>
+    <form action="propertycreate" method="post">
+          <legend>Crear inmuebles</legend>
+          <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+          </div>
+          
+          <div class="mb-3">
+            <label for="Descriocion" class="form-label">Descripcion</label>
+            <input type="text" id="descripcion" class="form-control" placeholder="Descripcion">
+          </div>
+      
+           <div class="mb-3">
+            <label for="Valor" class="form-label">Valor</label>
+            <input type="text" id="valor" class="form-control" placeholder="Valor">
+          </div>
+      
+           <div class="mb-3">
+            <label for="Hobitaciones" class="form-label">Habitaciones</label>
+            <input type="text" id="habitacion" class="form-control" placeholder="habitacion">
+          </div>
+      
+           <div class="mb-3">
+            <label for="Bano" class="form-label">Baño</label>
+            <input type="text" id="bano" class="form-control" placeholder="Baño">
+           </div>
+         
+           <div class="mb-3">
+            <label for="area" class="form-label">Area</label>
+            <input type="text" id="area" class="form-control" placeholder="Area">
+           </div>
+      
+           <div class="mb-3">
+            <label for="Estado" class="form-label">Estado</label>
+            <input type="text" id="estado" class="form-control" placeholder="Estado">
+           </div>
+      
+           <div class="mb-3">
+            <label for="Barrio" class="form-label">Barrio</label>
+            <input type="text" id="barrio" class="form-control" placeholder="Barrio">
+           </div>
+      
+            <div class="mb-3">
+        
+          </div>
+          <button type="submit" class="btn btn-primary">Crear</button>
+        </fieldset>
+      </form>
+    
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</html>
